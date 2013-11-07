@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>Your Title</title>
+		<title>Python in Science</title>
 
 		<meta name="description" content="Your description">
 		<meta name="author" content="Your Name">
@@ -37,59 +37,122 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
                 
-<section data-markdown>
-    # Python in Science
-    ## How coding and Python help to understand the brain
+<section>
+    <h1> Python in Science </h1>
+    <h3> Or how can Python help us understand the human brain? </h3>
     PyLadies Berlin, November 2013
+    <p>
+        <small> <a href="mailto:ivana.kajic@gmail.com">Ivana</a> / <a href="http://twitter.com/kajic_ivana">@kajic_ivana</a></small>
+    </p>
+
 </section>
-<section data-markdown>
-    <script type="text/template">
-        ## Testing Markdown
+                            
+            <section data-markdown>
+                <script type="text/template">
+                    Why do scientists need to code?                
+                    ---
+                    * Collect, store and process data
+                    * Simulations
+                    * Extract patterns and make predictions using data mining
+                </script>            
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    Why do scientists love Python?                  
+                    ---
 
-        This _should_ be __bold__ and this should be a [link](https://github.com/mbrochh/reveal-template).
-
-        ### Heading 3
-
-        * A list
-        * With three
-        * items
-    </script>
-</section>
-<section>
-    <h2>Testing code snippets</h2>
-    <pre><code>
-    import os
-    path = os.path.join('foo', 'bar')
-    def do_something(path):
-        return path
-    </code></pre>
-</section>
-<section>
-    <section data-background="#ff0000" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
-
-            Now we are red
-        </script>
-    </section>
-    <section data-background="#00ff00" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
-
-            Now we are green
-        </script>
-    </section>
-    <section data-background="#0000ff" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
-
-            Now we are blue
-
-            <small>dabadi dabadai...</small>
-        </script>
-    </section>
-</section>
-
+                </script>            
+            </section>            
+            <section data-markdown>
+                <script type="text/template">
+                    NumPy                
+                    ---
+                    * Is a powerful package for manipulation of numerical data
+                    * Extract patterns and make predictions using data mining
+                </script>            
+            </section>
+            <section class="image-slide" data-background="img/grass.jpg">
+                Some random background
+            </section>            
+            <section data-markdown>
+                <script type="text/template">
+                    Scipy
+                    ---
+                    * Collect, store and process data
+                    * Simulations
+                    * Extract patterns and make predictions using data mining
+                </script>            
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    Matplotlib
+                    ---
+                    ```python
+                    import matplotlib.pyplot as pl
+                    pl.figure()
+                    pl.plot(fancy_img)
+                    pl.show()
+                    ```
+                </script>            
+            </section>                                    
+            <section data-markdown>
+                <script type="text/template">
+                    NLTK
+                    ---
+                    * [Natural language toolkit]("http://nltk.org/") suitable for linguists, engineers, students, educators, researchers, and industry users alike 
+                    * Suite of text processing libraries for classification, tokenization, stemming, tagging and parsing
+                    * Example application: processing Tweets, RSS Feeds, extracting text from PDF, Word...                   
+                    
+                </script>            
+            </section> 
+            </section>                                    
+            <section data-markdown>
+                <script type="text/template">
+                    NLTK Book
+                    ---
+                    * Fundamentals of writing Python programs, working with corpora, categorizing text, analyzing linguistic structure...
+                    * Available [online for free]("http://nltk.org/book/"):                   
+                    
+                    <img src="http://covers.oreilly.com/images/9780596516499/cat.gif" width="300" height="400">
+                </script>            
+            </section>             
+            <section data-markdown>
+                <script type="text/template">
+                    Peek into NLTK
+                    ---
+                    ```python
+                    >>> import nltk
+                    >>> sentence = """At eight o'clock on Thursday morning
+                    ... Arthur didn't feel very good."""
+                    >>> tokens = nltk.word_tokenize(sentence)
+                    >>> tokens
+                    ['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
+                    'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
+                    >>> tagged = nltk.pos_tag(tokens)
+                    >>> tagged[0:6]
+                    [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
+                    ('Thursday', 'NNP'), ('morning', 'NN')]
+                    ```
+                </script>            
+            </section>             
+            <section data-markdown>
+                <script type="text/template">
+                    Scikit-learn
+                    ---
+                    * Collect, store and process data
+                    * Simulations
+                    * Extract patterns and make predictions using data mining
+                </script>            
+            </section>    
+            <section data-markdown>
+                <script type="text/template">
+                    MDP
+                    ---
+                    * Collect, store and process data
+                    * Simulations
+                    * Extract patterns and make predictions using data mining
+                </script>            
+            </section>                                       
 			</div>
 
 		</div>
@@ -106,6 +169,7 @@
 				progress: true,
 				history: true,
 				center: true,
+				margin: 0.0,
 
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
