@@ -1598,7 +1598,7 @@ body {
 	opacity: 0;
 }
 
-/*
+
 .zoomed .reveal .roll span {
 	background: none;
 }
@@ -1606,6 +1606,12 @@ body {
 .zoomed .reveal .roll span:after {
 	visibility: hidden;
 }
-*/
+
+/* Custom code */
+
+.reveal mini {
+  font-size: 12px;
+  color: #eeeeff; 
+}
 
 

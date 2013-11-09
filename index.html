@@ -14,8 +14,8 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/night.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="css/night.css" id="theme" />
 
 	<!-- For syntax highlighting -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -62,35 +62,78 @@ Because
 
 ---
 
+## SciPy is where everything starts...
+
+<img src="img/scipy.png">
+
+* Python-based open-source software for mathematics, science, and engineering
+
+* Actively maintained and supported by a huge community
+
+* Some of the included packages: NumPy, Matplotlib, IPython, Pandas...
+
+* These packages are also available idividually, let's take a look at some of them
+
+
+---
+
 ## NumPy                
 
-* Is a powerful package for manipulation of numerical data
-* Extract patterns and make predictions using data mining
+* Is a powerful package for efficient manipulation of numerical data such as vectors and matrices
+
+* Sytnax is very similar to MATLAB's ([cheat sheet](http://wiki.scipy.org/NumPy_for_Matlab_Users))
+
+* Is a foundation stone for many other Python libraries 
 
 ---
 
+<img src="img/matplotlib.png" />
+    
+* Python plotting library
 
-<section class="image-slide" data-background="img/grass.jpg">
-Some random background
+* Generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc, with "just a few lines of code"
 
----
-
-## Scipy
-
-* Collect, store and process data
-* Simulations
-* Extract patterns and make predictions using data mining
+* Let's take a look at some examples..
 
 ---
 
-## Matplotlib
+### bla bla!
+
+<img src="img/simple_plot.png" width="50%"/> 
+
 
 ```python
-import matplotlib.pyplot as pl
-pl.figure()
-pl.plot(fancy_img)
+import matplotlib.pylab as pl
+import numpy as np
+
+t = np.arange(0.0, 2.0, 0.01)
+s = np.sin(2*pi*t)
+pl.plot(t, s)
+
+pl.xlabel('time (s)')
+pl.ylabel('voltage (mV)')
+pl.title('About as simple as it gets, folks')
+pl.grid(True)
+pl.savefig("test.png")
 pl.show()
-```
+```       
+
+---
+
+
+### Example plots with matplotlib I
+
+<img src="img/heart.png" />
+<img src="img/histogram.png" />
+
+---
+
+### Example plots with matplotlib II
+
+<img src="img/hist2d_demo.png" />
+<img src="img/polys3d_demo.png" />
+
+* These examples are taken from [official matplotlib page](http://matplotlib.org/gallery.html#) where you can find even more nice examples and the source code used to generate them
 
 ---
 
@@ -129,20 +172,92 @@ pl.show()
 
 ---
 
-## Scikit-learn
+## <img src="img/scikit.png" width="40%">
 
-* Collect, store and process data
-* Simulations
-* Extract patterns and make predictions using data mining
+* [Scikit-learn](http://scikit-learn.org/stable/index.html): satisifes all the data mining and data analysis needs 
+
+* Abundance of algorithms for supervised and unsupervised learning 
+
+* Classification, regression, clustering, model selection, dimensionality reduction and data preprocessing
+
+---
+
+<section class="image-slide" data-background="img/scikit_classifiers_.png">
+
+---
+
+
+
+## <img src="img/mdp_logo_animation.gif" width="40%">
+
+* [Modular toolkit for data processing](http://mdp-toolkit.sourceforge.net/)
+
+* Set of algorithms for data mining, classification, signal processing, pattern recognition...
+
+* In MDP every algorithm is refered to as a node which can be modified by a user
+
+* Built on Numpy and Scipy
+
+---
+
+## MDP: Detection of objects
+
+* Imagine having 2D geometrical objects such as filled or emtpy circles and rectangles which are made of random points, for example:
+<center> <img src="img/mdp_randomdata.png"> </center>
+
+* Our goal is to find out **the number** of objects in this image
 
 
 ---
 
-## MDP
+## MDP: Detection of objects
 
-* Collect, store and process data
-* Simulations
-* Extract patterns and make predictions using data mining
+* There are many ways to solve this problem, but we love neurons and will use a special type of a neural network called [growing neural gas (GNG)](http://en.wikipedia.org/wiki/Neural_gas) to solve it
+
+* GNG spreads a sheet of neurons over the data and tries to position neurons so they maximally cover clusters of data
+
+* At every time step, the number of neurons in network increase until some final condition is met
+
+---
+
+### Neural network in the beginning...
+
+
+<center> <img src="img/mdp_initial.png" width="80%"> </center>
+
+---
+
+### ... and after the learning!
+
+
+<center><img src="img/mdp_trained.png" width="80%" /> </center>
+
+
+---
+
+### MDP code that does what we have just seen:
+
+```python
+import mdp
+
+x = generate_random_circles_and_rectangles()
+
+gng = mdp.nodes.GrowingNeuralGasNode(max_nodes=75)
+
+STEP = 500
+for i in range(0, x.shape[0], STEP):
+    gng.train(x[i:i+STEP])
+gng.stop_training()
+
+n_obj = len(gng.graph.connected_components())
+print n_obj
+```
+
+```
+Output: 5
+```
+<ul><small> \* Complete source code is available [here](http://mdp-toolkit.sourceforge.net/code/examples/gng/gng.html) </small></ul>
+
 
 </script>            
 </section>                                       
