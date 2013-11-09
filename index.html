@@ -1,193 +1,185 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+	<meta charset="utf-8">
 
-		<title>Python in Science</title>
+	<title>Python in Science</title>
 
-		<meta name="description" content="Your description">
-		<meta name="author" content="Your Name">
+	<meta name="description" content="Slides for the talk on Python in science for PyLadies Berlin">
+	<meta name="author" content="Ivana Kajic">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/night.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+		document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
 
-	<body>
+<body>
 
-		<div class="reveal">
+	<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-                
-<section>
-    <h1> Python in Science </h1>
-    <h3> Or how can Python help us understand the human brain? </h3>
-    PyLadies Berlin, November 2013
-    <p>
-        <small> <a href="mailto:ivana.kajic@gmail.com">Ivana</a> / <a href="http://twitter.com/kajic_ivana">@kajic_ivana</a></small>
-    </p>
+		<div class="slides">
 
-</section>
-                            
-            <section data-markdown>
-                <script type="text/template">
-                    Why do scientists need to code?                
-                    ---
-                    * Collect, store and process data
-                    * Simulations
-                    * Extract patterns and make predictions using data mining
-                </script>            
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    Why do scientists love Python?                  
-                    ---
+<section data-markdown data-separator="^\n---\n$">
+<script type="text/template">
 
-                </script>            
-            </section>            
-            <section data-markdown>
-                <script type="text/template">
-                    NumPy                
-                    ---
-                    * Is a powerful package for manipulation of numerical data
-                    * Extract patterns and make predictions using data mining
-                </script>            
-            </section>
-            <section class="image-slide" data-background="img/grass.jpg">
-                Some random background
-            </section>            
-            <section data-markdown>
-                <script type="text/template">
-                    Scipy
-                    ---
-                    * Collect, store and process data
-                    * Simulations
-                    * Extract patterns and make predictions using data mining
-                </script>            
-            </section>
-            <section data-markdown>
-                <script type="text/template">
-                    Matplotlib
-                    ---
-                    ```python
-                    import matplotlib.pyplot as pl
-                    pl.figure()
-                    pl.plot(fancy_img)
-                    pl.show()
-                    ```
-                </script>            
-            </section>                                    
-            <section data-markdown>
-                <script type="text/template">
-                    NLTK
-                    ---
-                    * [Natural language toolkit]("http://nltk.org/") suitable for linguists, engineers, students, educators, researchers, and industry users alike 
-                    * Suite of text processing libraries for classification, tokenization, stemming, tagging and parsing
-                    * Example application: processing Tweets, RSS Feeds, extracting text from PDF, Word...                   
-                    
-                </script>            
-            </section> 
-            </section>                                    
-            <section data-markdown>
-                <script type="text/template">
-                    NLTK Book
-                    ---
-                    * Fundamentals of writing Python programs, working with corpora, categorizing text, analyzing linguistic structure...
-                    * Available [online for free]("http://nltk.org/book/"):                   
-                    
-                    <img src="http://covers.oreilly.com/images/9780596516499/cat.gif" width="300" height="400">
-                </script>            
-            </section>             
-            <section data-markdown>
-                <script type="text/template">
-                    Peek into NLTK
-                    ---
-                    ```python
-                    >>> import nltk
-                    >>> sentence = """At eight o'clock on Thursday morning
-                    ... Arthur didn't feel very good."""
-                    >>> tokens = nltk.word_tokenize(sentence)
-                    >>> tokens
-                    ['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
-                    'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
-                    >>> tagged = nltk.pos_tag(tokens)
-                    >>> tagged[0:6]
-                    [('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
-                    ('Thursday', 'NNP'), ('morning', 'NN')]
-                    ```
-                </script>            
-            </section>             
-            <section data-markdown>
-                <script type="text/template">
-                    Scikit-learn
-                    ---
-                    * Collect, store and process data
-                    * Simulations
-                    * Extract patterns and make predictions using data mining
-                </script>            
-            </section>    
-            <section data-markdown>
-                <script type="text/template">
-                    MDP
-                    ---
-                    * Collect, store and process data
-                    * Simulations
-                    * Extract patterns and make predictions using data mining
-                </script>            
-            </section>                                       
-			</div>
+# Python in Science 
+### Or how can Python help us understand the human brain? 
 
-		</div>
+PyLadies Berlin, November 2013
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+<small> [Ivana Kajic](mailto:ivana.kajic@gmail.com) | [@kajic_ivana](http://twitter.com/kajic_ivana) </small>
 
-		<script>
+---
 
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				center: true,
-				margin: 0.0,
+## Why do scientists need to code?                
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+* Collect, store and process data
+* Simulations
+* Extract patterns and make predictions using data 
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+---
 
-		</script>
 
-	</body>
+## Why do scientists love Python?                  
+Because
+
+---
+
+## NumPy                
+
+* Is a powerful package for manipulation of numerical data
+* Extract patterns and make predictions using data mining
+
+---
+
+
+<section class="image-slide" data-background="img/grass.jpg">
+Some random background
+
+---
+
+## Scipy
+
+* Collect, store and process data
+* Simulations
+* Extract patterns and make predictions using data mining
+
+---
+
+## Matplotlib
+
+```python
+import matplotlib.pyplot as pl
+pl.figure()
+pl.plot(fancy_img)
+pl.show()
+```
+
+---
+
+## NLTK
+
+* [Natural language toolkit](http://nltk.org/) suitable for linguists, engineers, students, educators, researchers, and industry users alike 
+* Suite of text processing libraries for classification, tokenization, stemming, tagging and parsing
+* Example application: processing Tweets, RSS Feeds, extracting text from PDF, Word...                   
+
+---
+
+## NLTK Book
+
+* Fundamentals of writing Python programs, working with corpora, categorizing text, analyzing linguistic structure...
+* Available [online for free](http://nltk.org/book/):                   
+
+<img src="http://covers.oreilly.com/images/9780596516499/cat.gif" width="300" height="400">
+
+---
+
+## Peek into NLTK
+
+```python
+>>> import nltk
+>>> sentence = """At eight o'clock on Thursday morning
+... Arthur didn't feel very good."""
+>>> tokens = nltk.word_tokenize(sentence)
+>>> tokens
+['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
+'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
+>>> tagged = nltk.pos_tag(tokens)
+>>> tagged[0:6]
+[('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
+('Thursday', 'NNP'), ('morning', 'NN')]
+```
+
+---
+
+## Scikit-learn
+
+* Collect, store and process data
+* Simulations
+* Extract patterns and make predictions using data mining
+
+
+---
+
+## MDP
+
+* Collect, store and process data
+* Simulations
+* Extract patterns and make predictions using data mining
+
+</script>            
+</section>                                       
+
+   		</div>
+
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.min.js"></script>
+
+	<script>
+
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			margin: 0.0,
+
+			theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+			transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+			// Optional libraries used to extend on reveal.js
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				//{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+			]
+		});
+
+	</script>
+
+</body>
 </html>
