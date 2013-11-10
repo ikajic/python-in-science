@@ -48,11 +48,19 @@ PyLadies Berlin, November 2013
 
 ---
 
+# What does Python have to with brains?
+
+---
+
 ## Why do scientists need to code?                
 
-* Collect, store and process data
-* Simulations
+* Store and process data
+
+* Make simulations
+
 * Extract patterns and make predictions using data 
+
+* Make pretty plots of their data and results 
 
 ---
 
@@ -62,113 +70,225 @@ Because
 
 ---
 
-## SciPy is where everything starts...
+## Where Python meets Science
 
 <img src="img/scipy.png">
 
-* Python-based open-source software for mathematics, science, and engineering
+* [SciPy](http://www.scipy.org/) is open-source software for mathematics, science, and engineering
 
-* Actively maintained and supported by a huge community
+* Actively maintained and supported by a huge community (mailing lists, Q&A pages, SciPy conferences)
 
 * Some of the included packages: NumPy, Matplotlib, IPython, Pandas...
 
-* These packages are also available idividually, let's take a look at some of them
+* There are two options to get these packages
+    * Download each package separately
+    * Get the whole set as a single installation file: [Anaconda](http://continuum.io/downloads) or [Canopy](https://www.enthought.com/products/canopy/)
 
 
 ---
 
-## NumPy                
+## Step 0: IPython
 
-* Is a powerful package for efficient manipulation of numerical data such as vectors and matrices
+* [IPython](http://ipython.org/) is a simple yet powerful interactive environment to write Python code
 
-* Sytnax is very similar to MATLAB's ([cheat sheet](http://wiki.scipy.org/NumPy_for_Matlab_Users))
+* It's similar to the standard Python interpreter, but provides more functionality which makes coding easier and more efficient
 
-* Is a foundation stone for many other Python libraries 
+* For example: auto-completion using `tab`, save values and restore them later, the history of commands, timing of functions
+
+---
+
+<img src="img/ipython.png" />
+
+---
+
+## Dealing with numbers: NumPy
+
+* [NumPy](http://www.numpy.org/) is a powerful Python package for efficient manipulation with numbers 
+
+* Numbers are "the data": measurements from experiments, results of computer simulations, etc.
+
+* Numbers are stored in containers called `arrays` 
+
+* For MATLAB users planning to switch to Python there is a [cheat sheet](http://wiki.scipy.org/NumPy_for_Matlab_Users)
+ 
+
+---
+
+### NumPy Array
+
+* Basic data structure used to store numbers
+
+* Arrays can be vectors (one-dimensional) or matrices (two-dimensional)
+
+    * Vector containing four numbers: `[1, 2, 3, 4]`
+    * Matrix containing six numbers in two rows and three columns: 
+        
+        `[[1, 2, 3],`
+        
+        ` [4, 5, 6]]`
+
+
+* Indexing starts with `0` (not `1`), so the first element in a vector is at the `0`-th position
+
+
+---
+
+``` python
+>>> import numpy as np
+
+# Create an array with numbers from 0 to 15
+>>> a = np.arange(0, 15)
+>>> a
+array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14])
+
+# What is the first element in the array? 
+>>> a[0]
+0
+
+# What is the shape of our array?
+>>> a.shape
+(15,)
+
+# Make a new array, this time with rows and columns
+>>> b = a.reshape(3,5)
+>>> b
+array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14]])
+>>> b.shape
+(3, 5)
+
+# Get all the numbers in the second row 
+>>> b[1, :]
+array([5, 6, 7, 8, 9])
+
+>>> type(b)
+<type 'numpy.ndarray'>
+```
 
 ---
 
 <img src="img/matplotlib.png" />
     
-* Python plotting library
+* [Matplotlib](http://matplotlib.org/) is a Python package for data plotting
 
-* Generate plots, histograms, power spectra, bar charts, errorcharts, scatterplots, etc, with "just a few lines of code"
+* Supports different plotting options: histograms, power spectra, bar charts, errorcharts, scatterplots... with just a few lines of code
 
-* Let's take a look at some examples..
+* Ok, let's plot in Python!
 
 ---
 
-### bla bla!
+
+### Study: How does the amount of chocolate influence happiness?
 
 <img src="img/simple_plot.png" width="50%"/> 
 
+---
+
+### Plotting code
 
 ```python
-import matplotlib.pylab as pl
-import numpy as np
+>>> import matplotlib.pylab as pl
+>>> import numpy as np
 
-t = np.arange(0.0, 2.0, 0.01)
-s = np.sin(2*pi*t)
-pl.plot(t, s)
+# Load data on a drive into two NumPy arrays
+>>> chocolate = np.load('chocolate.npy')
+>>> happy = np.load('happiness.npy')
 
-pl.xlabel('time (s)')
-pl.ylabel('voltage (mV)')
-pl.title('About as simple as it gets, folks')
-pl.grid(True)
-pl.savefig("test.png")
-pl.show()
+# Plot array chocolate vs array happy
+>>> pl.plot(choc, happy)
+
+# Label horizontal axis (x) and vertical axis (y)
+>>> pl.xlabel('Chocolate (gram)')
+>>> pl.ylabel('Happiness (smiling)')
+
+# Give a title to our plot
+>>> pl.title('Influence of chocolate on happiness')
+
+>>> pl.grid(True)
+>>> pl.savefig("chocolate.png")
+>>> pl.show()
 ```       
 
 ---
 
 
-### Example plots with matplotlib I
+### With matplotlib you can do this
 
 <img src="img/heart.png" />
 <img src="img/histogram.png" />
 
 ---
 
-### Example plots with matplotlib II
+### ... and this! 
 
 <img src="img/hist2d_demo.png" />
 <img src="img/polys3d_demo.png" />
 
-* These examples are taken from [official matplotlib page](http://matplotlib.org/gallery.html#) where you can find even more nice examples and the source code used to generate them
+* And much more! These examples are taken from the gallery at the [matplotlib page](http://matplotlib.org/gallery.html#) which contains many beautiful plots and the source code used to generate them
 
 ---
 
 ## NLTK
 
 * [Natural language toolkit](http://nltk.org/) suitable for linguists, engineers, students, educators, researchers, and industry users alike 
+
 * Suite of text processing libraries for classification, tokenization, stemming, tagging and parsing
-* Example application: processing Tweets, RSS Feeds, extracting text from PDF, Word...                   
+
+* Example applications: RSS Feeds, extracting text from PDF, Word documents, Tweets ...                   
 
 ---
 
-## NLTK Book
+## More on NLTK
 
 * Fundamentals of writing Python programs, working with corpora, categorizing text, analyzing linguistic structure...
-* Available [online for free](http://nltk.org/book/):                   
+
+* Available [online](http://nltk.org/book/) for free:                   
 
 <img src="http://covers.oreilly.com/images/9780596516499/cat.gif" width="300" height="400">
 
 ---
 
-## Peek into NLTK
+## A peek into the NLTK
 
 ```python
 >>> import nltk
->>> sentence = """At eight o'clock on Thursday morning
-... Arthur didn't feel very good."""
+>>> sentence = "Good evening! Would you like some tea?"
 >>> tokens = nltk.word_tokenize(sentence)
 >>> tokens
-['At', 'eight', "o'clock", 'on', 'Thursday', 'morning',
-'Arthur', 'did', "n't", 'feel', 'very', 'good', '.']
+['Good', 'evening', '!', 'Would', 'you', 'like', 'some', 'tea', '?']
 >>> tagged = nltk.pos_tag(tokens)
->>> tagged[0:6]
-[('At', 'IN'), ('eight', 'CD'), ("o'clock", 'JJ'), ('on', 'IN'),
-('Thursday', 'NNP'), ('morning', 'NN')]
+>>> tagged
+[('Good', 'NNP'), ('evening', 'NN'), ('!', '.'), 
+('Would', 'MD'), ('you', 'PRP'), ('like', 'VB'), 
+('some', 'DT'), ('tea', 'NN'), ('?', '.')]
+
+# NNP and NN is abbreviation for a noun, VB for a verb and PRP for a personal pronoun
 ```
+
+---
+
+### Reading Jane Austen's Emma with NLTK *
+
+
+* NLTK also includes short excerpts from some books provided by the Project Gutenberg
+
+```python
+>>> import nltk
+>>> nltk.corpus.gutenberg.fileids()
+['austen-emma.txt', 'austen-persuasion.txt', 'austen-sense.txt', 
+'bible-kjv.txt', 'blake-poems.txt', 'bryant-stories.txt', 
+'burgess-busterbrown.txt', ..., 
+'shakespeare-hamlet.txt', 'shakespeare-macbeth.txt', 'whitman-leaves.txt']
+
+>>> emma = nltk.corpus.gutenberg.words('austen-emma.txt')
+>>> emma[10:20]
+['I', 'Emma', 'Woodhouse', ',', 'handsome', ',', 'clever', ',', 'and', 'rich']
+
+>>> print "Number of words:", len(emma)
+Number of words: 192427
+```
+<small>\* But I'd rather recommend a cup of tea and a blanket istead of Python for book reading </small>
 
 ---
 
@@ -190,13 +310,13 @@ pl.show()
 
 ## <img src="img/mdp_logo_animation.gif" width="40%">
 
-* [Modular toolkit for data processing](http://mdp-toolkit.sourceforge.net/)
+* [MDP](http://mdp-toolkit.sourceforge.net/) is a modular toolkit for data processing
 
 * Set of algorithms for data mining, classification, signal processing, pattern recognition...
 
-* In MDP every algorithm is refered to as a node which can be modified by a user
+* In MDP every algorithm is referred to as a `node` which can be modified by a user
 
-* Built on Numpy and Scipy
+* Built on NumPy and SciPy
 
 ---
 
@@ -205,7 +325,7 @@ pl.show()
 * Imagine having 2D geometrical objects such as filled or emtpy circles and rectangles which are made of random points, for example:
 <center> <img src="img/mdp_randomdata.png"> </center>
 
-* Our goal is to find out **the number** of objects in this image
+* Our goal is to find out how many objects there are in this image
 
 
 ---
@@ -235,7 +355,7 @@ pl.show()
 
 ---
 
-### MDP code that does what we have just seen:
+### Code that does what we have just seen:
 
 ```python
 import mdp
