@@ -40,17 +40,21 @@
 <script type="text/template">
 
 # Python in Science 
-### Or how can Python help us understand the human brain? 
+Or how can Python help us understand the human brain? 
+
+<img src="img/lab-flask.png" width="20%">
 
 PyLadies Berlin, November 2013
 
-<small> [Ivana Kajic](mailto:ivana.kajic@gmail.com) | [@kajic_ivana](http://twitter.com/kajic_ivana) </small>
+<small> [Ivana Kajic](mailto:ivana.kajic@gmail.com) Student@TU Berlin | [@kajic_ivana](http://twitter.com/kajic_ivana) </small>
 
 ---
 
 ## What does Python have to do with brains?
 
 ---
+
+<section class="image-slide" data-background="img/brain.jpg">
 
 ## The human brain
 
@@ -66,7 +70,7 @@ PyLadies Berlin, November 2013
 
 ## Can you actually explain how the whole brain works?
 
-* Maybe, but it is very hard. We split the problem of understanding the brain into smaller ones and divide them to different researchers:
+* Maybe, but it is very hard. We split the problem of understanding the brain into smaller ones and divide them to various researchers:
 
     * How does learning work?
     * How is information encoded in the brain?
@@ -83,29 +87,73 @@ PyLadies Berlin, November 2013
     
     * To name a few: neurophysiology, neuroanatomy, clinical neuroscience, neurolinguistics, neuroeconomics and computational neuroscience
 
-* Computational neuroscience is a young discipline that uses math, computer science, physics, philosophy and psychology to explain mechanisms in the human brain
+* Computational neuroscience is a young discipline that uses math, computer science, physics and psychology to explain mechanisms in the human brain
 
 ---
 
-#
+### Mind reading
+
+Work in progress in neurosciences: Is it possible to see what someone is thinking? 
+
+<img src="https://sites.google.com/site/gallantlabucb/pictures/Nishimoto.etal.2011.Reconstruction.5panels.png?attredirects=0" width="60%"/>
+<small> Research done by [Jack Gallant's Lab](http://gallantlab.org/index.html) at the UC Berkeley</small>
 
 ---
 
-## Why do scientists need to code?                
+## Mind reading: get your data!
 
-* Store and process data
+* Brain recording using fMRI scanners
 
-* Make simulations
+<div style="float:left;"> 
+    <img src="http://upload.wikimedia.org/wikipedia/commons/b/bd/Modern_3T_MRI.JPG" width="45%" /> 
+    <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Fmrtuebersicht.jpg/538px-Fmrtuebersicht.jpg" width="40%"/> 
+</div> 
 
-* Extract patterns and make predictions using data 
 
-* Make pretty plots of their data and results 
+---
+
+### Mind reading: make sense out of data
+
+* Make computational models and use them to make predictions
+
+* Use of machine learning and data mining algorithms, simulations
+
+<div style="float:left;">
+	<img src="img/mr_model.png">
+	<img src="img/code.png" width="40%">
+</div>	
+
+---
+
+<img src="http://publicradio1.wpengine.netdna-cdn.com/todays-question/files/2013/10/Mindreading.jpg"> 
+<small> Image via [Nature](http://www.nature.com/news/502428a-i2-jpg-7.13267?article=1.13989) </small>
+
+---
+
+### So where did we need Python in the mind reading example?               
+
+* Process the data: e.g. remove the noise caused by the subject moving in the scanner
+
+* Store the data in some sensible way: compress fMRI images and store them subject-wise or date-wise
+
+* Extract patterns from data and build computational models: use machine learning algorithms to make a model of a brain that is "thinking" about a shoe
+
+* Make pretty plots of our results: helps to understand what is happening and useful for communication among scientists
 
 ---
 
 
-## Why do scientists love Python?                  
-Because
+## Why did we choose Python?*                  
+
+* It’s free and easy to use: already there on most *nix systems. Just run `python` in a terminal
+
+* Great support: abundance of well maintained packages, especially tools needed in science
+
+* Readable and clear code: hides low level implementation details while following common coding conventions
+
+* Interactive: introspection of your code on the fly	
+
+<small> * MATLAB, R and some other programming languages are also used</small>
 
 ---
 
@@ -113,11 +161,9 @@ Because
 
 <img src="img/scipy.png">
 
-* [SciPy](http://www.scipy.org/) is open-source software for mathematics, science, and engineering
+* [SciPy](http://www.scipy.org/) stack is open-source bundle of Python packages for mathematics, science, and engineering
 
-* Actively maintained and supported by a huge community (mailing lists, Q&A pages, SciPy conferences)
-
-* Some of the included packages: NumPy, Matplotlib, IPython, Pandas...
+* Some of the included packages in the SciPy stack: NumPy, SciPy library, Matplotlib, IPython, Pandas...
 
 * There are two options to get these packages
     * Download each package separately
@@ -134,9 +180,19 @@ Because
 
 * For example: auto-completion using `tab`, save values and restore them later, the history of commands, timing of functions
 
+* IPython [Notebook](http://ipython.org/notebook.html) is a web-based interactive environment to write and execute code, write text and mathematical formulas, include plots...
+
 ---
 
+### IPython
+
 <img src="img/ipython.png" />
+
+---
+
+### IPython notebook (web-browser)
+
+<img src="http://ipython.org/ipython-doc/rel-1.0.0/_images/ipy_013_notebook_spectrogram.png" width="80%"/>
 
 ---
 
@@ -157,7 +213,7 @@ Because
 
 * Basic data structure used to store numbers
 
-* Arrays can be vectors (one-dimensional) or matrices (two-dimensional)
+* Arrays can be vectors (one-dimensional) or matrices (two-dimensional) or N-dimensional arrays
 
     * Vector containing four numbers: `[1, 2, 3, 4]`
     * Matrix containing six numbers in two rows and three columns: 
