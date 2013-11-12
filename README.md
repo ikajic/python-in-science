@@ -164,6 +164,7 @@ When not sure if dealing with lists or NumPy arrays, use `type`.
 Plotting
 ---
 Let's make some nice simple plots. First, we can plot our two arrays:
+
 ```python
 pl.figure()
 pl.plot(ages, label='Ages')
@@ -171,9 +172,10 @@ pl.plot(devices_now, label='Devices')
 pl.xlabel('Person ID')
 pl.title('Data')
 pl.legend()
+pl.show()
 ```
 
-This looks nice but it's not so informative, let's try something else. How about plotting distribution of ages using histograms?
+`pl.show()` is necessary to display your plot. Well, this looks nice but it's not so informative, let's try something else. How about plotting distribution of ages using histograms?
 We split our bins into equally spaced intervals of 10 years.
 
 ```python
