@@ -151,7 +151,7 @@ Whoa, that's a lot of code! Well, NumPy comes to rescue here and we can replace 
 devices_future = 2*devices_now
 ```
 Not only is this much nicer to read, but it's also much faster. 
-Notice that if we were using build-in Python list of integers we would get something different if we used the same syntax.
+Notice that if we were using built-in Python list of integers we would get something different if we used the same syntax.
 Here we're using `range` to create a list of 4 subsequent integers. Check this out:
 
 ```python
