@@ -16,13 +16,13 @@ If you're unsure which version to download you can find the information by right
 Canopy file contains much more packages than needed for this exercise, 
 but if you decide to do the other one it will be useful.
 
-**Linux** users can get the packages by entering the following command in Terminal:
+**Linux** users can get the packages by entering the following command in the Terminal:
 ```
 sudo apt-get install python-numpy python-scipy python-matplotlib ipython 
 
 ```
 
-For **Mac** users there is [Macports](http://www.macports.org/). After installing it run the following command in Terminal:
+For **Mac** users there is [Macports](http://www.macports.org/). After installing it run the following command in the Terminal:
 ```
 sudo port install py27-numpy py27-scipy py27-matplotlib py27-ipython
 ```
