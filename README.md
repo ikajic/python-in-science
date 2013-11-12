@@ -27,7 +27,6 @@ For **Mac** users there is [Macports](http://www.macports.org/). After installin
 sudo port install py27-numpy py27-scipy py27-matplotlib py27-ipython
 ```
 
-
 Get the data
 ---
 Our data is stored as a Google spreadsheet and you can download it [here](https://docs.google.com/spreadsheet/ccc?key=0ArfNOZkGFBb0dGpyVVhGY1ZNMDh1dE5HMzRrQTk0YVE&usp=sharing). 
@@ -93,7 +92,7 @@ How to get all the ages? Well, knowing that `:` gives us everything, this is eas
 data[:,0]
 ```
 
-Navigate using the `cd` (change directory) command to the folder where the downloaded .csv file is contained. 
+In IPython navigate using the `cd` (change directory) command to the folder where the downloaded .csv file is contained. 
 To see in which folder you are at the moment use the `pwd` (print working directory). 
 If you want to list all the files contained in the folder use `ls`.
 
