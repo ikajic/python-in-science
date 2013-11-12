@@ -60,7 +60,7 @@ Or how can Python help us understand the human brain?
 
 * Is only 2% of the weight of the body, but consumes approx. 25% of energy
 
-* Contains 100,000,000,000 neurons which are connected with 100, 000,000,000,000 synapses. There are more synapses in the brain than stars in the Milky way!
+* Contains 100,000,000,000 neurons which are connected with 60,000,000,000,000 synapses. There are more synapses in the brain than stars in the Milky way!
 
 * Grey brain matter (*neocortex*) is doing "the" job and white brain matter is for communication between neurons
 
@@ -120,6 +120,8 @@ Work in progress in neurosciences: Is it possible to see what someone is thinkin
 
 * Make computational models and use them to make predictions
 
+* This is where computational neuroscience kicks in
+
 * Use of machine learning and data mining algorithms, simulations
 
 <div style="float:left;">
@@ -136,11 +138,11 @@ Work in progress in neurosciences: Is it possible to see what someone is thinkin
 
 ### So where did we need Python in the mind reading example?               
 
-* Process the data: e.g. remove the noise caused by the subject moving in the scanner
+* Process the data: e.g. remove the noise caused by subject movements in the scanner
 
-* Store the data in some sensible way: compress fMRI images and store them subject-wise or date-wise
+* Store and organize the data in some sensible way
 
-* Extract patterns from data and build computational models: use machine learning algorithms to make a model of a brain that is "thinking" about a shoe
+* Extract patterns from data and build computational models
 
 * Make pretty plots of our results: helps to understand what is happening and useful for communication among scientists
 
@@ -165,12 +167,12 @@ Work in progress in neurosciences: Is it possible to see what someone is thinkin
 
 <img src="img/scipy.png">
 
-* [SciPy](http://www.scipy.org/) stack is open-source bundle of Python packages for mathematics, science, and engineering
+* [SciPy](http://www.scipy.org/) Stack is open-source bundle of Python packages for mathematics, science, and engineering
 
 * Some of the included packages in the SciPy stack: NumPy, SciPy library, Matplotlib, IPython, Pandas...
 
 * There are two options to get these packages
-    * Download each package separately
+    * Download each package separately ([instructions](https://github.com/ikajic/pyscience/blob/master/README.md))
     * Get the whole set as a single installation file: [Anaconda](http://continuum.io/downloads) or [Canopy](https://www.enthought.com/products/canopy/)
 
 
@@ -217,7 +219,7 @@ Work in progress in neurosciences: Is it possible to see what someone is thinkin
 
 * Basic data structure used to store numbers
 
-* Arrays can be vectors (one-dimensional) or matrices (two-dimensional) or N-dimensional arrays
+* Vectors are one-dimensional arrays, matrices two-dimensional but we can also have N-dimensional arrays
 
     * Vector containing four numbers: `[1, 2, 3, 4]`
     * Matrix containing six numbers in two rows and three columns: 
@@ -475,8 +477,36 @@ print n_obj
 ```
 Output: 5
 ```
+
 <ul><small> \* Complete source code is available [here](http://mdp-toolkit.sourceforge.net/code/examples/gng/gng.html) </small></ul>
 
+---
+
+## Python as a glue
+
+* Python can be used to wrap libraries in other programming languages such as C, C++ , Java or Fortran (which are also used in science)
+
+* This is useful when you need to speed up the execution of Python code
+
+* [Cython](http://cython.org/): Wrap external C libraries
+
+* [f2Py](http://cython.org/): Fortran to Python
+
+* [swig](http://www.swig.org/): Turning C code into a Python module
+
+---
+
+## Hands on session
+
+* There are two tutorials, pick the one you like!
+
+* [Basic tutorial](https://github.com/ikajic/pyscience/): Very simple data analysis using NumPy and Matplotlib
+    * Recommended for Python beginners
+    * The tutorial explains how to install the packages you need
+
+* [Advanced tutorial](http://scikit-learn.org/stable/tutorial/basic/tutorial.html#introduction): Introduction to machine learning with scikit-learn: Handwritten digit recognition 
+    * For those of you who already used Python and have basic NumPy experience 
+    * Installing instructions are available [here](http://scikit-learn.org/stable/install.html)
 
 </script>            
 </section>                                       
