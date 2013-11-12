@@ -185,11 +185,21 @@ pl.xlabel('Age')
 pl.title('Distribution of ages')
 ```
 
-Much better! How about using the PyLadies color?
+Much better! Now, let's try to use some colors and NumPy's `arange` to generate the spacing of bins, instead of writing them out manually:
 
-```
+```python
+pl.figure()
+bins = np.arange(0, 90, 10)
+pl.subplot(1,2,1)
+pl.title('Distribution of ages')
 pl.hist(ages, bins, histtype='bar', rwidth=0.8, color=['crimson'])
+
+pl.subplot(1,2,2)
+pl.title('Distribution of devices')
+bins_dev = np.arange(0, 30, 5)
+pl.hist(devices_now, bins_dev, histtype='bar', rwidth=0.8, color=['burlywood'])
 ```
 
-
+Try inspecting `bins` and `bins_dev` to convince yourself that those are the bins we wanted. 
+What happens if you move the `pl.title` above the `pl.subplot`? 
 
