@@ -9,22 +9,24 @@ To write Python commands we will use interactive Python console [IPython](http:/
 
 Getting necessary packages
 ---
-For **Windows** users the most convenient way to get IPython, NumPy and Matplotlib is to 
+For **Windows** and **Mac** users the most convenient way to get IPython, NumPy and Matplotlib is to 
 download the [Canopy](https://www.enthought.com/products/canopy/) installation file. 
-Depending on your operating system type, you will need either 32-bit or 64-bit version.
-If you're unsure which version to download you can find the information by right click on `My Computer` and `Properties`.
+Depending on your operating system type, you will need either a 32-bit or 64-bit version.
+If you're unsure which version to download you can find the information by right click on `My Computer` and `Properties` 
+in Windows. On Mac follow the instructions [here](http://support.apple.com/kb/ht3696). 
+Alternatively **Mac** users experienced in using Terminal might wish to get a subset of packages using 
+[Macports](http://www.macports.org/) instead of installing the whole Canopy file:
+
+```
+sudo port install py27-numpy py27-scipy py27-matplotlib py27-ipython
+```
+
 Canopy file contains much more packages than needed for this exercise, 
 but if you decide to do the other one it will be useful.
 
 **Linux** users can get the packages by entering the following command in the Terminal:
 ```
 sudo apt-get install python-numpy python-scipy python-matplotlib ipython 
-
-```
-
-For **Mac** users there is [Macports](http://www.macports.org/). After installing it run the following command in the Terminal:
-```
-sudo port install py27-numpy py27-scipy py27-matplotlib py27-ipython
 ```
 
 Get the data
