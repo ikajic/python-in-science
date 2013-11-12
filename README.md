@@ -47,7 +47,7 @@ Start your IPython console and import the NumPy and matplotlib package:
 
 ```python
 import numpy as np
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as pl
 ```
 
 Load the data with the following command:
