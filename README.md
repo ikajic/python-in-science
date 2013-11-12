@@ -64,7 +64,7 @@ np.genfromtxt?
 ```
 
 To make sure that our data is indeed what we had in the spreadsheet, 
-print the data, print the data type and its dimensions by simply typing in the two following commands:
+print the data, print the data type and its dimensions by simply typing in the three following commands:
 ```python
 data
 type(data)
@@ -131,15 +131,19 @@ Based on our data, the number of devices in 2013 for a list of people are:
 devices_now = data[:,1]
 ```
 
-How wold we compute the number of devices `devices_future` in the future?
-Fist, let's initialize an empty NumPy array that has the same number of elements as `devices_now`:
+How to compute the number of devices `devices_future` in the future?
+First, let's initialize an empty NumPy array that has the same number of elements as `devices_now`:
 
 ```python
 devices_future = np.zeros(devices_now.shape)
 ```
 
-One way is to use a for loop, and multiply each element in the arrray `devices_now` by 2.
-This is the way to do it:
+One way is to use a `for` loop, to access each element in the array `devices_now`  and multiply it by 2. That's the way we would multiply each element in a list if we used Python built-in lists that are initialized in a following way:
+```python
+sample_list = [1, 2, 3, 4]
+```
+Ok, let's try that with the NumPy array:
+
 ``` python
 for i in range(len(devices_now)):
   devices_future[i] = 2*devices_now[i]
@@ -151,7 +155,7 @@ Whoa, that's a lot of code! Well, NumPy comes to rescue here and we can replace 
 ```python
 devices_future = 2*devices_now
 ```
-Not only is this much nicer to read, but it's also much faster. 
+Not only is this much nicer to read, but it's also much faster! 
 Notice that if we were using built-in Python list of integers we would get something different if we used the same syntax.
 Here we're using `range` to create a list of 4 subsequent integers. Check this out:
 
@@ -205,4 +209,12 @@ pl.hist(devices_now, bins_dev, histtype='bar', rwidth=0.8, color=['burlywood'])
 
 Try inspecting `bins` and `bins_dev` to convince yourself that those are the bins we wanted. 
 What happens if you move the `pl.title` above the `pl.subplot`? 
+
+Give me more
+---
+If you're done with this exercise and want to have more NumPy, here's something to play with: 
+Use IPython's magic function `%timeit`  to compare the execution time of the two above mentioned 
+cases of array multiplication: the one using for loop and lists and the other with NumPy arrays. 
+How long does it take to multiply an array with a scalar in a for loop? 
+To spice it up a bit, don't be afraid to use bigger arrays and lists (e.g. N=1000, N=100 000 and N=100 000 000)! 
 
